@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(to bottom, #D4A373, #A67B5B, #3A5311);
+
+}
+.carousel-item img {
+    max-height: 300px;
+    width: auto;
+    object-fit: cover;
+    margin: auto;
+}
+
+
