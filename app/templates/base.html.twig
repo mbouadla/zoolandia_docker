@@ -27,7 +27,7 @@
 				<div>
 
 					{# montrer ce qu'est zollandia #}
-					<section class="container my-5 border border-dark p-4 rounded">
+					<section id="a-propos" class="container my-5 border border-dark p-4 rounded">
 						<div class="row">
 							<div class="col-md-6 text-start">
 								<h2 class="mb-4">À propos de nous</h2>
@@ -53,7 +53,7 @@
 									est d'éduquer et d'inspirer à travers la découverte de la faune.
 								</p>
 								<ul class="list-unstyled">
-									<li>🌿 Nous nous efforçons de créer un environnement où chaque visiteur peut apprécier la beauté de la nature tout en apprenant sur la conservation et le bien-être animal.</li>
+									<li>🌍 Nous nous efforçons de créer un environnement où chaque visiteur peut apprécier la beauté de la nature tout en apprenant sur la conservation et le bien-être animal.</li>
 									<li>🦁 En offrant des services variés et des habitats adaptés, ZOOLANDIA vise à sensibiliser le public à l'importance de la préservation de la biodiversité.</li>
 								</ul>
 							</div>
@@ -62,7 +62,7 @@
 
 
 					{# les services de zoolandia #}
-					<div class="text-center border border-dark p-4 rounded">
+					<div class="images text-center border border-dark p-4 rounded">
 						<h2>Services de ZOOLANDIA</h2>
 						<p class="w-50 mx-auto">
 							Explorez les services uniques de ZOOLANDIA,<br>
@@ -99,14 +99,48 @@
 						</div>
 					</div>
 
+					{# Affichage des trois animaux #}
+<div class="card-group">
+    <!-- Premier Animal -->
+    <div class="card">
+        <img src="{{ asset('assets/images/lion.jpg') }}" class="card-img-top" alt="Lion" style="height: 300px; object-fit: cover;">
+        <a href="#" class="btn btn-warning">En savoir plus</a>
+        <div class="card-body">
+            <h2 class="card-title">Le Lion</h2>
+            <p class="card-text">Le lion, surnommé le "roi des animaux", est une figure emblématique de la savane. Apprenez-en plus sur leur mode de vie et leurs interactions sociales lors de notre visite.</p>
+        </div>
+    </div>
+    <!-- Deuxième Animal -->
+    <div class="card">
+        <img src="{{ asset('assets/images/elephant.jpg') }}" class="card-img-top" alt="Éléphant" style="height: 300px; object-fit: cover;">
+        <a href="#" class="btn btn-warning">En savoir plus</a>
+        <div class="card-body">
+            <h2 class="card-title">L'Éléphant</h2>
+            <p class="card-text">L'éléphant est un animal majestueux et intelligent. Nos guides vous dévoileront les secrets de leur comportement et des efforts de conservation pour cette espèce menacée.</p>
+        </div>
+    </div>
+    <!-- Troisième Animal -->
+    <div class="card">
+        <img src="{{ asset('assets/images/tigre.jpg') }}" class="card-img-top" alt="Tigre" style="height: 300px; object-fit: cover;">
+        <a href="#" class="btn btn-warning">En savoir plus</a>
+        <div class="card-body">
+            <h2 class="card-title">Le Tigre</h2>
+            <p class="card-text">Le tigre est l'un des félins les plus puissants et les plus rares. Découvrez leur habitat naturel et comment nous contribuons à leur préservation.</p>
+        </div>
+    </div>
+</div>
+
 
 					{# image sur la nature #}
-					<div class="card text-bg-dark">
+					<div class="card text-bg-dark position-relative">
 						<img src="{{ asset('assets/images/image_nature.jpg') }}" class="card-img-top" alt="la nature">
-						<div class="card-img-overlay">
-							<h2 class="card-title ">Restez calme et profitez de la naturee</h2>
+						<div class="card-img-overlay position-absolute top-50 start-50 translate-middle text-center">
+							<h2 class="card-title">Restez calme et profitez de la nature</h2>
 						</div>
 					</div>
+
+
+					{# avis client #}
 
 					<div id="carouselExampleCaptions" class="carousel slide">
 						<div class="carousel-indicators">

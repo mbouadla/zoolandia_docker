@@ -9,4 +9,132 @@ body {
     margin: auto;
 }
 
+.logo {
+    width: 150px; /* Ajuste selon ton besoin */
+    height: auto;
+}
+.navbar-brand {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Ajuste l'espacement entre le logo et le texte */
+}
+.images {
+    background: rgba(130, 60, 60, 0.6); /* Fond plus opaque pour un meilleur contraste */
+    border-radius: 15px; /* Bords plus arrondis */
+    border: 4px solid #aaa; /* Bordure plus fine */
+    width: 60%; /* Largeur de 60% pour une meilleure proportion */
+    height: auto; /* Hauteur automatique pour ajuster le contenu */
+    margin: 0 auto; /* Centrer horizontalement */
+    display: flex; /* Flexbox pour centrer le contenu */
+    flex-direction: column; /* Disposer les éléments en colonne */
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    padding: 20px; /* Plus d'espace autour du texte */
+    box-shadow: 0 4px 12px rgba(191, 71, 71, 0.2); /* Ajouter une ombre portée pour un effet de profondeur */
+}
+
+.images h2 {
+    color: black; /* Couleur blanche pour le titre */
+    font-size: 2rem; /* Taille du texte du titre plus grande */
+    margin-bottom: 10px; /* Ajouter un espace sous le titre */
+    text-shadow: 2px 2px 4px rgba(148, 104, 43, 0.7); /* Ombre de texte couleur sable */
+}
+
+.images p {
+    color: black; /* Couleur blanche pour le texte */
+    font-size: 1.1rem; /* Taille du texte un peu plus grande */
+    text-align: center; /* Centrer le texte */
+    line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
+    max-width: 80%; /* Limiter la largeur du texte pour qu'il ne prenne pas toute la largeur du conteneur */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .images {
+        width: 90%; /* Augmenter la largeur sur les petits écrans */
+    }
+
+    .images h2 {
+        font-size: 1.5rem; /* Réduire la taille du titre */
+    }
+
+    .images p {
+        font-size: 1rem; /* Réduire la taille du texte */
+    }
+}
+
+
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+    border-radius: 10px; /* Arrondir les bords */
+    border: 5px solid #ccc; /* Ajouter une bordure de 1px (ou une autre valeur plus petite) */
+    width: 100%; /* Occuper toute la largeur de l'image */
+    height: 100%; /* Occuper toute la hauteur de l'image */
+    display: flex; /* Utiliser Flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    text-align: center; /* Centrer le texte */
+}
+
+/* Améliorer les images du carrousel avis */
+.carousel-item img {
+    border-radius: 15px; /* Arrondir les bords des images */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre autour des images */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transition douce pour l'agrandissement */
+}
+
+/* Effet au survol des images */
+.carousel-item:hover img {
+    transform: scale(1.05); /* Agrandir légèrement l'image au survol */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Ombre plus marquée au survol */
+}
+
+/* Stylisation des légendes */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour améliorer la lisibilité */
+    border-radius: 10px; /* Arrondir les coins des légendes */
+    padding: 20px;
+    max-width: 80%; /* Limiter la largeur des légendes */
+    text-align: center;
+    color: #fff; /* Texte en blanc pour mieux ressortir */
+}
+
+/* Ombre douce sur le texte des légendes */
+.carousel-caption h2 {
+    font-size: 2rem; /* Agrandir le titre */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre de texte pour le titre */
+}
+
+.carousel-caption p {
+    font-size: 1.1rem; /* Augmenter légèrement la taille du texte */
+    line-height: 1.6; /* Espacement entre les lignes */
+}
+
+/* Améliorer l'apparence des contrôles de navigation */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #ffcc00; /* Couleur de l'icône de navigation (jaune/or) */
+    border-radius: 50%; /* Icônes arrondies */
+}
+
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+    background-color: #e0a800; /* Changer la couleur au survol */
+}
+
+/* Contrôles de navigation (précédent/suivant) */
+.carousel-control-prev, .carousel-control-next {
+    filter: invert(100%); /* Inverser les couleurs des contrôles */
+}
+
+/* Centrer les indicateurs sous le carrousel */
+.carousel-indicators button {
+    background-color: #ffcc00; /* Couleur des indicateurs (jaune/or) */
+}
+
+.carousel-indicators .active {
+    background-color: #e0a800; /* Couleur de l'indicateur actif */
+}
+
+
 
