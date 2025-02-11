@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AnimauxController!{% endblock %}
+
+{% block body %}
+{% for animal in animaux %}
+        <div class="col-12 mb-0">
+          <div class="card position-relative">
+            <img src="{{ asset(animal.getImageAnimal()) }}" class="card-img" alt="elephant ">
+            <div class="card-img-overlay d-flex justify-content-center align-items-center text-white">
+              <div class="text-center">
+                <h1 class="card-text candal-regular">Découvrez nos animaux dans
+                  {{ animal.NomAnimal }}  {{ animal.espece }} {{ animal.description }} {{ animal.ImageAnimal }} {{ animal.poids }}  {{ animal.age }}</h1>
+                {# <a href="{{ path('app_list_animaux', {'id': habitat.id}) }}" class="btn btn-outline-light candal-regular">Voir nos Animaux</a> #}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+{% endblock %}
+
+
+
+
+
+   {#  <h1>Créer un nouvel animal</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit">Enregistrer</button>
+    {{ form_end(form) }} #}
+
+

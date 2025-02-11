@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row g-4">
+			{% for animal in animaux %}
+				<div class="col-md-4 mb-4">
+					<div
+						class="card position-relative h-100 shadow-lg rounded-3 border-0 hover-effect">
+						<!-- Ombre et arrondi pour un meilleur effet -->
+						<img
+						src="{{ asset(animal.getImageAnimal()) }}" class="card-img-top" alt="{{ animal.getNomAnimal }}" style="height: 250px; object-fit: cover; border-radius: 0.75rem;">
+						<!-- Image arrondie -->
+						<div class="card-body text-center">
+							<h5 class="card-title text-primary fw-bold">{{ animal.getNomAnimal }}</h5>
+							<!-- Titre plus visible -->
+							<p class="card-text text-muted funne">{{ animal.description | slice(0, 100) }}
+								{% if animal.description|length > 100 %}...
+								{% endif %}
+							</p>
+							<a href="{{ path('app_animal', {'id': animal.id}) }}" class="btn btn-outline-primary text-uppercase fw-semibold hover-btn">Voir nos Animaux</a>
+							<!-- Bouton plus stylé -->
+						</div>
+						<a href="{{ path('animal_edit', {'id': animal.id}) }}">
+							<button type="button" class="btn btn-warning">Modifier</button>
+						</a>
+
+						<a href="{{ path('animal_delete', {'id': animal.id}) }}">
+							<button type="button" class="btn btn-danger">Supprimer</button>
+						</a>
+
+
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div>
+	<a href="{{ path('animal_new') }}">
+							<button type="button" class="btn btn-success">Ajouter un animal</button>
+						</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="animal-card-container col-12 mb-0">
+        <div class="animal-card d-flex">
+            <img src="{{ asset(animal.getImageAnimal()) }}" class="animal-img-left" alt="{{ animal.getNomAnimal }}">
+            <div class="animal-card-body text-white">
+                <h1 class="animal-card-text candal-regular">Découvrez nos animaux dans
+                    {{ animal.getNomAnimal }} <br> {{ animal.espece }} <br> {{ animal.description }} <br>{{ animal.poids }} <br>{{ animal.age }} </h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}

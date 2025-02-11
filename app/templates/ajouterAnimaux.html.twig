@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>{% if animal is defined and animal is not null %}Modifier{% else %}Ajouter{% endif %} un animal</h1>
+
+
+	{# {{form (formulaire)}} #}
+	{{form_start(formulaire, {'attr':
+  {'novalidate' : 'novalidate'}}) }}
+
+	{{form_widget(formulaire)}}
+
+	{{ form_end(formulaire)}}
+
+{% endblock %}
+
