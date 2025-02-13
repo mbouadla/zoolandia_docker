@@ -23,12 +23,12 @@ class RegistrationFormType extends AbstractType
             ->add('prenom')
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'Employer' => 'ROLE_EMPLOYER',
-                    'Vétiraine' => 'ROLE_VETERINAIRE',
+                    'Employer' => 'ROLE_USER',
+                    'Vétiraine' => 'ROLE_USER',
                     'Admin' => 'ROLE_ADMIN',
                 ],
-                'multiple' => true, // Pour permettre plusieurs choix
-                'expanded' => true, // Pour afficher des cases à cocher (checkbox)
+                'multiple' => false, // Pour permettre plusieurs choix 
+                'expanded' => false, // Pour afficher des cases à cocher (checkbox)  
             ])
             ->add('agreeTerms', CheckboxType::class, [
 

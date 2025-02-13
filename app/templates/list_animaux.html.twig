@@ -18,6 +18,7 @@
 								{% if animal.description|length > 100 %}...
 								{% endif %}
 							</p>
+							<section>
 							<a href="{{ path('app_animal', {'id': animal.id}) }}" class="btn btn-outline-primary text-uppercase fw-semibold hover-btn">Voir nos Animaux</a>
 							<!-- Bouton plus stylé -->
 						</div>
@@ -28,7 +29,15 @@
 						<a href="{{ path('animal_delete', {'id': animal.id}) }}">
 							<button type="button" class="btn btn-danger">Supprimer</button>
 						</a>
-
+					</section>
+					{# <section>
+					<a href="{{ path('animal_edit', {'id': animal.id}) }}">
+							<button type="button" class="btn btn-warning">Observation</button>
+						</a>
+						<a href="{{ path('animal_edit', {'id': animal.id}) }}">
+							<button type="button" class="btn btn-warning">Soin</button>
+						</a>
+					</section> #}
 
 					</div>
 				</div>
