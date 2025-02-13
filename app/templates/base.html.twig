@@ -10,20 +10,45 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block stylesheets %}{% endblock %}
 
-		{% block javascripts %}
-			{% block importmap %}
-				{{ importmap('app') }}
-			{% endblock %}
+			{% block javascripts %}
+				<script>
+						document.addEventListener("DOMContentLoaded", function () {
+						const toggleButton = document.getElementById("darkModeToggle");
+						const body = document.body;
+
+						// Vérifie si le mode sombre est activé dans le localStorage
+						if (localStorage.getItem("darkMode") === "enabled") {
+						body.classList.add("dark-mode");
+						}
+
+						toggleButton.addEventListener("click", function () {
+						body.classList.toggle("dark-mode");
+
+						// Sauvegarde le mode sombre dans le localStorage
+						if (body.classList.contains("dark-mode")) {
+						localStorage.setItem("darkMode", "enabled");
+						} else {
+						localStorage.setItem("darkMode", "disabled");
+						}
+						});
+						});
+				</script>
 		{% endblock %}
+		{% block importmap %}
+			{{ importmap('app') }}
+		{% endblock %}
+
 	</head>
 	<body>
 		{% include "_partials/_navbar.html.twig" %}
 		{% block body %}
+			{# button dark mode #}
+			<button id="darkModeToggle" class="btn btn-dark">🌙 Mode Sombre</button>
 			{# montrer les éléments à l'aide des call to action #}
 			<div class="text-center">
 				<h1 class="Header33styled__Title-sc-16wdpje-4 WM_GLOBAL_heading42 sm-word-wrap EditableContent__styledAsRef-sc-15za8y8-0 jBUvcC  text-center">ZOOLANDIA</h1>
 				<button type="button" class="btn btn-warning">Services</button>
-				<button type="button" class="btn btn-secondary">Contact</button>
+				<a href="{{ path('app_contact') }}" class="btn btn-secondary">Contact</a>
 				<div>
 
 					{# montrer ce qu'est zollandia #}
@@ -42,7 +67,7 @@
 								</ul>
 								<p class="mt-4">
 									Nous mettons un point d’honneur à offrir un cadre respectueux du bien-être animal, tout en sensibilisant nos visiteurs à la préservation des écosystèmes.  
-																		Plongez dans un univers où se mêlent fourrure, plumes et écailles, et laissez-vous émerveiller par la magie de la nature !
+																											Plongez dans un univers où se mêlent fourrure, plumes et écailles, et laissez-vous émerveiller par la magie de la nature !
 								</p>
 							</div>
 							<div class="col-md-6 text-start">
@@ -100,39 +125,40 @@
 					</div>
 
 					{# Affichage des trois animaux #}
-<div class="card-group">
-    <!-- Premier Animal -->
-    <div class="card">
-        <img src="{{ asset('assets/images/lion.jpg') }}" class="card-img-top" alt="Lion" style="height: 300px; object-fit: cover;">
-        <a href="#" class="btn btn-warning">En savoir plus</a>
-        <div class="card-body">
-            <h2 class="card-title">Le Lion</h2>
-            <p class="card-text">Le lion, surnommé le "roi des animaux", est une figure emblématique de la savane. Apprenez-en plus sur leur mode de vie et leurs interactions sociales lors de notre visite.</p>
-        </div>
-    </div>
-    <!-- Deuxième Animal -->
-    <div class="card">
-        <img src="{{ asset('assets/images/elephant.jpg') }}" class="card-img-top" alt="Éléphant" style="height: 300px; object-fit: cover;">
-        <a href="#" class="btn btn-warning">En savoir plus</a>
-        <div class="card-body">
-            <h2 class="card-title">L'Éléphant</h2>
-            <p class="card-text">L'éléphant est un animal majestueux et intelligent. Nos guides vous dévoileront les secrets de leur comportement et des efforts de conservation pour cette espèce menacée.</p>
-        </div>
-    </div>
-    <!-- Troisième Animal -->
-    <div class="card">
-        <img src="{{ asset('assets/images/tigre.jpg') }}" class="card-img-top" alt="Tigre" style="height: 300px; object-fit: cover;">
-        <a href="#" class="btn btn-warning">En savoir plus</a>
-        <div class="card-body">
-            <h2 class="card-title">Le Tigre</h2>
-            <p class="card-text">Le tigre est l'un des félins les plus puissants et les plus rares. Découvrez leur habitat naturel et comment nous contribuons à leur préservation.</p>
-        </div>
-    </div>
-</div>
+					<div
+						class="card-group">
+						<!-- Premier Animal -->
+						<div class="card">
+							<img src="{{ asset('assets/images/lion.jpg') }}" class="card-img-top" alt="Lion" style="height: 300px; object-fit: cover;">
+							<a href="#" class="btn btn-warning">En savoir plus</a>
+							<div class="card-body">
+								<h2 class="card-title">Le Lion</h2>
+								<p class="card-text">Le lion, surnommé le "roi des animaux", est une figure emblématique de la savane. Apprenez-en plus sur leur mode de vie et leurs interactions sociales lors de notre visite.</p>
+							</div>
+						</div>
+						<!-- Deuxième Animal -->
+						<div class="card">
+							<img src="{{ asset('assets/images/elephant.jpg') }}" class="card-img-top" alt="Éléphant" style="height: 300px; object-fit: cover;">
+							<a href="#" class="btn btn-warning">En savoir plus</a>
+							<div class="card-body">
+								<h2 class="card-title">L'Éléphant</h2>
+								<p class="card-text">L'éléphant est un animal majestueux et intelligent. Nos guides vous dévoileront les secrets de leur comportement et des efforts de conservation pour cette espèce menacée.</p>
+							</div>
+						</div>
+						<!-- Troisième Animal -->
+						<div class="card">
+							<img src="{{ asset('assets/images/tigre.jpg') }}" class="card-img-top" alt="Tigre" style="height: 300px; object-fit: cover;">
+							<a href="#" class="btn btn-warning">En savoir plus</a>
+							<div class="card-body">
+								<h2 class="card-title">Le Tigre</h2>
+								<p class="card-text">Le tigre est l'un des félins les plus puissants et les plus rares. Découvrez leur habitat naturel et comment nous contribuons à leur préservation.</p>
+							</div>
+						</div>
+					</div>
 
 
 					{# image sur la nature #}
-					<div class="card text-bg-dark position-relative">
+					<div class="card text-bg-dark position-relative mb-5">
 						<img src="{{ asset('assets/images/image_nature.jpg') }}" class="card-img-top" alt="la nature">
 						<div class="card-img-overlay position-absolute top-50 start-50 translate-middle text-center">
 							<h2 class="card-title">Restez calme et profitez de la nature</h2>
@@ -142,7 +168,7 @@
 
 					{# avis client #}
 
-					<div id="carouselExampleCaptions" class="carousel slide">
+					<div id="carouselExampleCaptions" class="carousel slide ">
 						<div class="carousel-indicators">
 							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -180,8 +206,6 @@
 							<span class="visually-hidden">Next</span>
 						</button>
 					</div>
-
-
 				{% endblock %}
 				{% include '_partials/_footer.html.twig' %}
 				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

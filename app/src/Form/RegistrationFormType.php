@@ -12,7 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -27,7 +27,7 @@ class RegistrationFormType extends AbstractType
                     'Vétiraine' => 'ROLE_USER',
                     'Admin' => 'ROLE_ADMIN',
                 ],
-                'multiple' => false, // Pour permettre plusieurs choix 
+                'multiple' => true, // Pour permettre plusieurs choix 
                 'expanded' => false, // Pour afficher des cases à cocher (checkbox)  
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -56,6 +56,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('save', SubmitType::class, ['label' => 'Send']);
         ;
     }
 

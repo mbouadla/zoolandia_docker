@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AnimauxRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AnimauxRepository::class)]
@@ -34,6 +36,17 @@ class Animaux
     #[ORM\ManyToOne(inversedBy: 'animauxes')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Habitat $habitat = null;
+
+    /**
+     * @var Collection<int, Observation>
+     */
+    #[ORM\OneToMany(targetEntity: Observation::class, mappedBy: 'animal')]
+    private Collection $observations;
+
+    public function __construct()
+    {
+        $this->observations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +133,36 @@ class Animaux
     public function setHabitat(?Habitat $habitat): static
     {
         $this->habitat = $habitat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Observation>
+     */
+    public function getObservations(): Collection
+    {
+        return $this->observations;
+    }
+
+    public function addObservation(Observation $observation): static
+    {
+        if (!$this->observations->contains($observation)) {
+            $this->observations->add($observation);
+            $observation->setAnimal($this);
+        }
+
+        return $this;
+    }
+
+    public function removeObservation(Observation $observation): static
+    {
+        if ($this->observations->removeElement($observation)) {
+            // set the owning side to null (unless already changed)
+            if ($observation->getAnimal() === $this) {
+                $observation->setAnimal(null);
+            }
+        }
 
         return $this;
     }

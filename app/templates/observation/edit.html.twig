@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Modifier l'observation</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.date) }}
+        {# Ajoute ici d'autres champs du formulaire si nécessaire #}
+        <button class="btn btn-primary">Sauvegarder</button>
+    {{ form_end(form) }}
+{% endblock %}

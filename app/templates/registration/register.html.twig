@@ -4,25 +4,21 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Register</h1>
+	<div class="container">
+    <h1>Inscription</h1>
 
-	{{ form_errors(registrationForm) }}
+    {{ form_errors(registrationForm) }}
 
-	{{ form_start(registrationForm) }}
-	{{ form_row(registrationForm.email) }}
-	{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.nom) }}
+        {{ form_row(registrationForm.prenom) }}
+        {{ form_row(registrationForm.roles) }}      
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
         }) }}
+				{{ form_row(registrationForm.agreeTerms) }}
 
-	{% for choice in registrationForm.roles %}
-    <div class="form-check me-3">
-        {{ form_widget(choice, {'attr': {'class': 'form-check-input'}}) }}
-        {{ form_label(choice) }}
-    </div>
-{% endfor %}
-
-	{{ form_row(registrationForm.agreeTerms) }}
-
-	<button type="submit" class="btn">Register</button>
-	{{ form_end(registrationForm) }}
+    {{ form_end(registrationForm) }}
+		</div>
 {% endblock %}

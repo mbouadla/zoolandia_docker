@@ -1,0 +1,25 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% for observation in observations %}
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Observation pour : {{ observation.animal.NomAnimal }} </h2>
+                            <h3 class="card-subtitle mb-2 text-muted">Espèce : {{ observation.animal.espece }}</h3>
+                            <p class="card-text">Description de l'observation : {{ observation.description }}</p>
+                            <p class="card-text"><strong>Date :</strong> {{ observation.date|date('d/m/Y H:i') }}</p>
+                            <p class="card-text"><strong>Utilisateur :</strong> {{ observation.user.id }}</p>
+                            <a href="{{ path('observation_edit', {'id': observation.id}) }}" class="btn btn-warning">Modifier</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p>Aucune observation disponible.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
