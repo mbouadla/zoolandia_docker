@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales - Zoolandia{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <!-- En-tête avec une image -->
+        <header class="text-center mb-5">
+            <h1 class="fw-bold text-uppercase">Mentions légales</h1>
+            <p class="text-muted">Tout ce que vous devez savoir sur les aspects légaux de Zoolandia.</p>
+            <img width="300" src="{{ asset('assets/images/mention_legale.jpg') }}" alt="Zoolandia" class="img-fluid rounded shadow-lg">
+        </header>
+
+        <!-- Sections des mentions légales -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title">Informations légales</h2>
+                        <p class="card-text">
+                            Zoolandia est une entreprise spécialisée dans la protection et l'observation des animaux.
+                            Pour toute information, veuillez nous contacter à : contact@zoolandia.com.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title">Conditions d'utilisation</h2>
+                        <p class="card-text">
+                            L'utilisation de notre site implique l'acceptation des conditions générales d'utilisation
+                            disponibles sur cette page.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title">Politique de confidentialité</h2>
+                        <p class="card-text">
+                            Nous attachons une grande importance à la protection de vos données personnelles. Consultez
+                            notre politique de confidentialité pour en savoir plus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title">Cookies</h2>
+                        <p class="card-text">
+                            Nous utilisons des cookies pour améliorer votre expérience sur notre site. Vous pouvez gérer
+                            vos préférences en matière de cookies à tout moment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pied de page personnalisé -->
+        <div class="text-center mt-4">
+            <p class="fw-bold">© 2025 <span class="text-uppercase">Zoolandia</span> - Tous droits réservés</p>
+        </div>
+    </div>
+{% endblock %}

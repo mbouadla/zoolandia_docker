@@ -88,6 +88,13 @@ body {
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
+
+/* logo */
+.logo {
+  width: 100px !important; 
+  height: auto !important; 
+}
+
 /*  autre */
   
 body {
