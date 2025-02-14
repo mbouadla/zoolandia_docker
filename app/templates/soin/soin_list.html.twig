@@ -1,0 +1,25 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% for soin in soins %}
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Observation pour : {{ soin.animal.NomAnimal }} </h2>
+                            <h3 class="card-subtitle mb-2 text-muted">Espèce : {{ soin.animal.espece }}</h3>
+                            <p class="card-text">Description de l'observation : {{ soin.description }}</p>
+                            <p class="card-text"><strong>Date :</strong> {{ soin.date|date('d/m/Y H:i') }}</p>
+                            <p class="card-text"><strong>Utilisateur :</strong> {{ soin.user.id }}</p>
+                            <a href="{{ path('soin_edit', {'id': soin.id}) }}" class="btn btn-warning">Modifier</a>
+                            <a href="{{ path('app_delete', {'id': soin.id}) }}" class="btn btn-danger">Supprimer</a> 
+                        </div> 
+                </div>
+            </div>
+        {% else %}
+            <p>Aucune observation disponible.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

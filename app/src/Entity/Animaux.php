@@ -43,9 +43,16 @@ class Animaux
     #[ORM\OneToMany(targetEntity: Observation::class, mappedBy: 'animal')]
     private Collection $observations;
 
+    /**
+     * @var Collection<int, Soin>
+     */
+    #[ORM\OneToMany(targetEntity: Soin::class, mappedBy: 'animal')]
+    private Collection $soins;
+
     public function __construct()
     {
         $this->observations = new ArrayCollection();
+        $this->soins = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -161,6 +168,36 @@ class Animaux
             // set the owning side to null (unless already changed)
             if ($observation->getAnimal() === $this) {
                 $observation->setAnimal(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Soin>
+     */
+    public function getSoins(): Collection
+    {
+        return $this->soins;
+    }
+
+    public function addSoin(Soin $soin): static
+    {
+        if (!$this->soins->contains($soin)) {
+            $this->soins->add($soin);
+            $soin->setAnimal($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSoin(Soin $soin): static
+    {
+        if ($this->soins->removeElement($soin)) {
+            // set the owning side to null (unless already changed)
+            if ($soin->getAnimal() === $this) {
+                $soin->setAnimal(null);
             }
         }
 

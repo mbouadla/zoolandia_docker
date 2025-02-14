@@ -47,9 +47,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Observation::class, mappedBy: 'user')]
     private Collection $observations;
 
+    /**
+     * @var Collection<int, Soin>
+     */
+    #[ORM\OneToMany(targetEntity: Soin::class, mappedBy: 'user')]
+    private Collection $soins;
+
     public function __construct()
     {
         $this->observations = new ArrayCollection();
+        $this->soins = new ArrayCollection();
     }
 
    
@@ -177,6 +184,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($observation->getUser() === $this) {
                 $observation->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Soin>
+     */
+    public function getSoins(): Collection
+    {
+        return $this->soins;
+    }
+
+    public function addSoin(Soin $soin): static
+    {
+        if (!$this->soins->contains($soin)) {
+            $this->soins->add($soin);
+            $soin->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSoin(Soin $soin): static
+    {
+        if ($this->soins->removeElement($soin)) {
+            // set the owning side to null (unless already changed)
+            if ($soin->getUser() === $this) {
+                $soin->setUser(null);
             }
         }
 
