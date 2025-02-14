@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services - Zoolandia{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        {# les services de zoolandia #}
+        <div class="images text-center border border-dark p-4 rounded">
+            <h2>Services de ZOOLANDIA</h2>
+            <p class="w-50 mx-auto">
+                Explorez les services uniques de ZOOLANDIA,<br>
+                incluant des visites guidées personnalisées et des programmes éducatifs immersifs.<br>
+                Vivez une expérience inoubliable au cœur de la nature.
+            </p>
+        </div>
+
+        <div class="card-group mt-4">
+            <div class="card">
+                <img src="{{ asset('assets/images/visit_zoo.jpg') }}" class="card-img-top" alt="visite du zoo" style="height: 300px; object-fit: cover;">
+                <div class="card-body">
+                    <h2 class="card-title">Visites guidées personnalisées</h2>
+                    <p class="card-text">Plongez dans l'univers animalier avec nos visites guidées personnalisées. Nos experts passionnés vous accompagneront à travers le zoo, partageant des anecdotes fascinantes et des informations sur nos animaux et leurs habitats. Profitez d'une approche interactive qui rend chaque visite unique et mémorable.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ asset('assets/images/programme_educatif.jpg') }}" class="card-img-top" alt="programme éducatif" style="height: 300px; object-fit: cover;">
+                <div class="card-body">
+                    <h2 class="card-title">Programmes éducatifs</h2>
+                    <p class="card-text">Participez à nos programmes éducatifs, conçus pour tous les âges. Que vous soyez un enfant curieux ou un adulte passionné, nos ateliers et conférences vous permettront d'approfondir vos connaissances sur la faune et la conservation. Apprenez tout en vous amusant dans un cadre naturel.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ asset('assets/images/evenement.jpg') }}" class="card-img-top" alt="événement du zoo" style="height: 300px; object-fit: cover;">
+                <div class="card-body">
+                    <h2 class="card-title">Événements spéciaux</h2>
+                    <p class="card-text">Rejoignez-nous pour nos événements spéciaux tout au long de l'année. Des journées thématiques aux rencontres avec les animaux, chaque événement est une occasion de célébrer la vie sauvage et de renforcer notre engagement envers la protection de l'environnement.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
