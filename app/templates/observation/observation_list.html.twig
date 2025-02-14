@@ -14,6 +14,7 @@
                             <p class="card-text"><strong>Date :</strong> {{ observation.date|date('d/m/Y H:i') }}</p>
                             <p class="card-text"><strong>Utilisateur :</strong> {{ observation.user.id }}</p>
                             <a href="{{ path('observation_edit', {'id': observation.id}) }}" class="btn btn-warning">Modifier</a>
+                            <a href="{{ path('app_delete', {'id': observation.id}) }}" class="btn btn-danger">Supprimer</a>
                         </div>
                     </div>
                 </div>

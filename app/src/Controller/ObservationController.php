@@ -73,4 +73,13 @@ class ObservationController extends AbstractController
             'observation' => $observation
         ]);
     }
+    #[Route('/delete/{id}', name: 'app_delete')]
+    public function deleteObservation(EntityManagerInterface $entityManager, $id): Response
+    {
+        $observationSupprimer = $entityManager->getRepository(Observation::class)->find($id);
+        $entityManager->remove($observationSupprimer);
+        $entityManager->flush();
+        /* return new Response("<h1>Le contact a bien ete supprime</h1>"); */
+        return $this->redirectToRoute('observation_list');
+    }
 }
