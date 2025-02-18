@@ -9,4 +9,5 @@ import './styles/css/app.css';
 import './styles/scss/app.scss';
 
 
+
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
