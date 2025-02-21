@@ -23,8 +23,8 @@ class RegistrationFormType extends AbstractType
             ->add('prenom')
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'Employer' => 'ROLE_USER',
-                    'Vétiraine' => 'ROLE_USER',
+                    'Employer' => 'ROLE_EMPLOYER',
+                    'Vétiraine' => 'ROLE_VETERINAIRE',
                     'Admin' => 'ROLE_ADMIN',
                 ],
                 'multiple' => true, // Pour permettre plusieurs choix 

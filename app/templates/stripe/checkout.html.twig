@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Paiement {% endblock %}
+
+{% block body %}
+    <h1>Effectuer un paiement</h1>
+
+    <form action="{{ path('app_checkout') }}" method="POST">
+        <label>Billet Enfant :</label>
+        <input type="number" name="billet_enfant" min="0" value="1">
+
+        <label>Billet Adulte :</label>
+        <input type="number" name="billet_adulte" min="0" value="1">
+
+        <button type="submit">Payer avec Stripe</button>
+    </form>
+{% endblock %}

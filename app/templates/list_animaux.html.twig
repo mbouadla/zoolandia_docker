@@ -33,14 +33,16 @@
 							{% endif %}
 						</section>
 						 <section>
-						
+						{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_VETERINAIRE') or is_granted('ROLE_EMPLOYER') %} 
 											<a href="{{ path('observation_new', {'id': animal.id}) }}">
 								<button type="button" class="btn btn-warning">Observation</button>
 								</a>
-					
+						 {% endif %} 
+						{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_VETERINAIRE')  %} 
 												<a href="{{ path('soin_new', {'id': animal.id}) }}">
 													<button type="button" class="btn btn-warning">Soin</button>
 												</a>
+						 {% endif %} 
 											</section> 
 
 					</div>

@@ -1,10 +1,10 @@
 <footer class="bg-dark text-white py-4">
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
 
             <!-- Menu Contact -->
             <div class="col-md-2 col-12">
-                <h3 class="fs-6 text-center">
+                <h3 class="fs-6">
                     <a class="nav-link text-white p-2 d-block" href="{{ path('app_contact') }}">
                         Contact
                     </a>
@@ -15,7 +15,7 @@
             <div class="col-md-2 col-12">
                 <div class="accordion" id="footerAccordion1">
                     <div class="accordion-item bg-dark border-0">
-                        <h2 class="accordion-header text-center">
+                        <h2 class="accordion-header">
                             <button class="accordion-button text-white bg-dark collapsed" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#entreprise">
                                 Entreprise & Avis
@@ -33,7 +33,7 @@
 
             <!-- Menu Mentions légales -->
             <div class="col-md-2 col-12">
-                <h3 class="fs-6 text-center">
+                <h3 class="fs-6">
                     <a class="nav-link text-white p-2 d-block" href="{{ path('app_mentions_legales') }}">
                         Mentions légales
                     </a>
@@ -44,7 +44,7 @@
             <div class="col-md-2 col-12">
                 <div class="accordion" id="footerAccordion2">
                     <div class="accordion-item bg-dark border-0">
-                        <h2 class="accordion-header text-center">
+                        <h2 class="accordion-header">
                             <button class="accordion-button text-white bg-dark collapsed" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#social">
                                 Réseaux sociaux
@@ -61,25 +61,13 @@
                 </div>
             </div>
 
-            <!-- Menu Billetterie -->
+            <!-- Bouton Billetterie (aligné avec les autres menus) -->
             <div class="col-md-2 col-12">
-                <div class="accordion" id="footerAccordion3">
-                    <div class="accordion-item bg-dark border-0">
-                        <h2 class="accordion-header text-center">
-                            <button class="accordion-button text-white bg-dark collapsed" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#billetterie">
-                                Billetterie
-                            </button>
-                        </h2>
-                        <div id="billetterie" class="accordion-collapse collapse" data-bs-parent="#footerAccordion3">
-                            <div class="accordion-body">
-                                <a href="#" class="text-white d-block">Acheter un billet</a>
-                                <a href="#" class="text-white d-block">Tarifs</a>
-                                <a href="#" class="text-white d-block">Offres spéciales</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="fs-6">
+                    <a class="nav-link text-white p-2 d-block" href="{{ path('app_stripe') }}">
+                        Billetterie
+                    </a>
+                </h3>
             </div>
 
         </div>
@@ -90,4 +78,3 @@
         </div>
     </div>
 </footer>
-

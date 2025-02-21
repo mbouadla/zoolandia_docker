@@ -1,7 +1,10 @@
+{# templates/home/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Page d'accueil{% endblock %}
 
 {% block body %}
-
+    <h1>Bienvenue sur Zoolandia !</h1>
+    <p>Ceci est la page d'accueil de votre site.</p>
+    <a href="{{ path('app_checkout') }}">Accéder à la billeterie</a>  <!-- Exemple de lien vers la page de paiement -->
 {% endblock %}
