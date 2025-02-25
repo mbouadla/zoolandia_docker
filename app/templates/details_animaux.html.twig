@@ -1,12 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="animal-card-container col-12 mb-0">
-        <div class="animal-card d-flex">
-            <img src="{{ asset(animal.getImageAnimal()) }}" class="animal-img-left" alt="{{ animal.getNomAnimal }}">
-            <div class="animal-card-body text-white">
-                <h1 class="animal-card-text candal-regular">Découvrez nos animaux dans
-                    {{ animal.getNomAnimal }} <br> {{ animal.espece }} <br> {{ animal.description }} <br>{{ animal.poids }} <br>{{ animal.age }} </h1>
+    <div class="container mt-4">
+        <div class="row justify-content-center align-items-center">
+            <!-- Image -->
+            <div class="col-lg-6 col-md-12">
+                <img src="{{ asset(animal.getImageAnimal()) }}" class="img-fluid rounded" alt="{{ animal.getNomAnimal }}">
+            </div>
+
+            <!-- Texte -->
+            <div class="col-lg-6 col-md-12 text-white text-md-start text-center mt-md-0 mt-3">
+                <h1 class="candal-regular">Découvrez nos animaux</h1>
+                <h2>{{ animal.getNomAnimal }}</h2>
+                <p><strong>Espèce :</strong> {{ animal.espece }}</p>
+                <p><strong>Description :</strong> {{ animal.description }}</p>
+                <p><strong>Poids :</strong> {{ animal.poids }} kg </p>
+                <p><strong>Âge :</strong> {{ animal.age }} ans </p>
             </div>
         </div>
     </div>
