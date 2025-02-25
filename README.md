@@ -1,5 +1,4 @@
 Sommaire
-Sommaire
 Le projet
 Technologies
 Base de données
