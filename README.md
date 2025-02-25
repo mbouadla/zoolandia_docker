@@ -1,3 +1,6 @@
+Zoolandia
+Bienvenue sur Zoolandia, un projet innovant visant à créer une plateforme interactive dédiée à la découverte du monde animal. Ce projet est développé en utilisant les technologies modernes pour offrir une expérience utilisateur optimale.
+
 Sommaire
 Le projet
 Technologies
@@ -11,47 +14,46 @@ Page d'un animal
 Mobile
 Desktop
 Le projet
-Zoolandia est une application web interactive dédiée à la gestion et à la présentation d'un parc zoologique virtuel. Ce projet est développé avec Symfony 7 et a pour objectif de fournir une plateforme où les utilisateurs peuvent explorer différentes espèces animales, leurs habitats et les événements du parc.
+Zoolandia est une plateforme interactive développée avec Symfony 7, permettant aux utilisateurs de découvrir diverses espèces animales à travers des fiches détaillées, des images et des vidéos. Ce projet est conçu pour être une ressource éducative pour les passionnés d'animaux et les professionnels.
 
 Technologies
-Zoolandia est développé en utilisant :
+Le projet Zoolandia utilise les technologies suivantes :
 
-Docker
-Symfony 7
-MySQL 8.0
-PHP 8.2
-PHPMyAdmin
-Sass
-L'utilisation de bundles est limitée au strict nécessaire pour assurer une performance optimale.
-
+Docker : Pour la containerisation et la gestion des environnements.
+Symfony 7 : Framework PHP pour le développement web.
+MySQL 8.0 : Système de gestion de bases de données relationnelles.
+PHP 8.2 : Langage de programmation côté serveur.
+PHPMyAdmin : Outil d'administration de MySQL.
+Sass : Préprocesseur CSS pour des styles plus maintenables.
 Base de données
-Le schéma de la base de données est conçu pour gérer efficacement les informations relatives aux animaux, aux enclos, aux employés et aux visiteurs. Vous pouvez consulter le schéma détaillé ici : Schéma de la base de données
+Le schéma de la base de données est disponible ici : Schéma de la base de données
 
 
 
 Vidéos
-Présentation et configuration du projet (Commit GitHub)
-Introduction sur les contrôleurs (Commit GitHub)
-Les templates et Assets (Commit GitHub)
-Création de la base de données (Commit GitHub)
-Gestion des animaux et des enclos (Commit GitHub)
-Authentification des utilisateurs (Commit GitHub)
-Gestion des événements du parc (Commit GitHub)
-Création des formulaires (Commit GitHub)
-Les DataFixtures (Commit GitHub)
-Validation des formulaires (Commit GitHub)
-Upload d'images et redimensionnement (Commit GitHub)
-Accès aux données relationnelles (Commit GitHub)
-Styling avec CSS et Sass (Commit GitHub)
-Utilisation de CKEditor 5 pour les descriptions (Commit GitHub)
-Affichage des informations des animaux (Commit GitHub)
-Pagination des listes d'animaux (Commit GitHub)
-Gestion des commentaires des visiteurs (Commit GitHub)
-Mise en place de la recherche (Commit GitHub)
-Optimisation des performances (Commit GitHub)
-Déploiement de l'application (Commit GitHub)
+Suivez le développement du projet à travers cette série de tutoriels vidéo :
+
+Présentation et configuration du projet
+Introduction sur les contrôleurs
+Les templates et Assets
+Création de la base de données
+Inscription et Authentification des utilisateurs
+Envoi du mail de confirmation du compte des utilisateurs
+Réinitialisation du mot de passe des utilisateurs
+Création des formulaires
+Validation des formulaires
+Validation frontend - Entropie de mots de passe
+Upload d'Images et Redimensionnement
+Accès aux données relationnelles
+Du CSS et Sass avec la création de la barre de navigation
+Du CSS et Sass avec la création de la page d'accueil
+Utiliser CKEditor 5 pour écrire les articles
+Upload d'images dans CKEditor 5 avec SimpleUpload
+Afficher le contenu des articles
+Liste des articles avec pagination
+À venir
 Maquettes
-Les maquettes de l'application sont disponibles sur Figma
+Les maquettes du projet sont disponibles sur Figma
 
 Page d'accueil
 Mobile
@@ -64,3 +66,7 @@ Page d'un animal
 Mobile
 
 Desktop
+
+Pour contribuer au projet ou signaler des problèmes, veuillez consulter la section CONTRIBUTING.md.
+
+Merci de votre intérêt pour Zoolandia !
