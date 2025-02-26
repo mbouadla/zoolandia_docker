@@ -21,4 +21,6 @@ class HabitatControllerTest extends KernelTestCase
         $habitats = $habitatRepository->findAll();
         $this->assertIsArray($habitats);
     }
+   
+    
 }

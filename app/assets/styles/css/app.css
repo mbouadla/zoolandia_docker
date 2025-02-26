@@ -88,6 +88,24 @@ body {
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .btn {
+    background-color: #333;
+    color: white;
+}
+#darkModeToggle{
+  width: auto;
+}
+
 
 /* logo */
 .logo {
@@ -96,10 +114,14 @@ body {
 }
 
 
+
 /*  autre */
   
 body {
     background: linear-gradient(to bottom, #D4A373, #A67B5B, #3A5311);
+    display: flex;
+  flex-direction: column; /* Permet d'empiler les éléments de manière verticale */
+  min-height: 100vh; /* Garantit que le contenu prend toute la hauteur de la fenêtre */
 
 }
 .carousel-item img {
@@ -274,4 +296,27 @@ body {
 .animal-card-text {
     font-size: 1.25rem;
     line-height: 1.4;
+}
+/* Contenu qui doit s'étirer pour occuper tout l'espace disponible */
+.content {
+  flex-grow: 1; /* Permet au contenu de s'étirer */
+}
+/* Footer qui reste collé en bas */
+footer {
+  margin-top: auto; /* Force le footer à se placer en bas */
+}
+footer .row {
+  display: flex;
+  justify-content: space-between; /* Pour répartir les éléments de manière égale */
+}
+
+footer .col-md-2 {
+  display: flex;
+  justify-content: center; /* Centrer les éléments dans chaque colonne */
+  align-items: center; /* Centrer verticalement */
+}
+
+/* Si vous voulez espacer les éléments et le nom du site en bas */
+footer .text-center.mt-4 {
+  margin-top: 20px; /* Espacement entre les menus et le texte en bas */
 }
